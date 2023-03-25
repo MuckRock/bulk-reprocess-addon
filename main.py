@@ -18,4 +18,4 @@ class Reprocess(SoftTimeOutAddOn):
 
 
 if __name__ == "__main__":
-    HelloWorld().main()
+    Reprocess().main()
