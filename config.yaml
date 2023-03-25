@@ -4,15 +4,6 @@ type: object
 documents:
   - query
 properties:
-  ocr:
-    title: OCR? 
+  sure:
+    title: Are you sure you want to reprocess these documents?
     type: boolean
-  document_language:
-    title: Document Language
-    type: string
-    default: english
-  ocr_engine: 
-    title: OCR Engine
-    type: string
-    default: tesseract
-    description: OCR Engine you would like to apply during the re-process. Amazon Textract requires AI credits. 
