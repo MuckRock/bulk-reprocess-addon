@@ -7,6 +7,7 @@ description: >-
 type: object
 documents:
   - query
+  - selected
 properties:
   sure:
     title: Are you sure you want to reprocess these documents?
