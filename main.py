@@ -14,7 +14,7 @@ class Reprocess(SoftTimeOutAddOn):
         document_language = self.data.get("document_language")"""
         if self.data.get("sure"):
             for document in self.get_documents():
-                document.procress()
+                document.process()
 
 
 if __name__ == "__main__":
