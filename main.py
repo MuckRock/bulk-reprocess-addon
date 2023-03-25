@@ -12,8 +12,9 @@ class Reprocess(SoftTimeOutAddOn):
         """ ocr = self.data.get("ocr")
         ocr_engine = self.data.get("ocr_engine")
         document_language = self.data.get("document_language")"""
-        for document in self.get_documents():
-            document.procress()
+        if self.data.get("sure"):
+            for document in self.get_documents():
+                document.procress()
 
 
 if __name__ == "__main__":
