@@ -18,7 +18,7 @@ class Reprocess(SoftTimeOutAddOn):
         opts = {"force_ocr" : ocr}
         if self.data.get("sure"):
             for document in self.get_documents():
-                self.client.post(f"document/{document.id}/process", json=opts)
+                self.client.post(f"documents/{document.id}/process", json=opts)
 
 
 if __name__ == "__main__":
