@@ -9,12 +9,14 @@ class Reprocess(SoftTimeOutAddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
-        """ ocr = self.data.get("ocr")
+        ocr = self.data.get("force_ocr")
+        if ocr is None:
+            ocr = False
         ocr_engine = self.data.get("ocr_engine")
-        document_language = self.data.get("document_language")"""
+        document_language = self.data.get("document_language")
         if self.data.get("sure"):
             for document in self.get_documents():
-                document.process()
+                document.process(force_ocr=ocr)
 
 
 if __name__ == "__main__":
