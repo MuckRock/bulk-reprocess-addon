@@ -16,12 +16,6 @@ class Reprocess(SoftTimeOutAddOn):
         if ocr is None:
             ocr = False
         lang = self.data["language"]
-        """
-        if ocr:
-            opts = {"force_ocr" : ocr, "language": lang}
-        else: 
-            opts = {}
-        """
 
         for doc_group in grouper(self.get_documents(), BULK_LIMIT):
             doc_group = [
@@ -33,11 +27,6 @@ class Reprocess(SoftTimeOutAddOn):
                 for d in doc_group
             ]
             resp = self.client.post("documents/process/", json=doc_group)
-        """
-        if self.data.get("sure"):
-            for document in self.get_documents():
-                self.client.post(f"documents/{document.id}/process/", json=opts)
-        """
 
 if __name__ == "__main__":
     Reprocess().main()
