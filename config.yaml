@@ -18,7 +18,6 @@ properties:
   language:
     title: OCR Language. 
     type: string
-    description: A
     default: eng
     enum: &langs
       - ara # Arabic
