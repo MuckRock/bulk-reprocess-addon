@@ -2,6 +2,7 @@
 This DocumentCloud Add-On allows you to bulk reprocress documents on DocumentCloud
 """
 
+import requests
 from documentcloud.addon import SoftTimeOutAddOn
 
 class Reprocess(SoftTimeOutAddOn):
@@ -16,7 +17,7 @@ class Reprocess(SoftTimeOutAddOn):
         document_language = self.data.get("document_language")
         if self.data.get("sure"):
             for document in self.get_documents():
-                document.process(force_ocr=ocr)
+                self.client.post(f"document/{document.id}/process", force_ocr=ocr)
 
 
 if __name__ == "__main__":
