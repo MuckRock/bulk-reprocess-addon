@@ -15,10 +15,6 @@ properties:
   force_ocr: 
     title: Force OCR?
     type: boolean
-  ocr_engine:
-    title: OCR Engine (tess4 or textract)
-    type: string
-    default: tess4
   language:
     title: OCR Language. 
     type: string
