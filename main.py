@@ -23,7 +23,7 @@ class Reprocess(SoftTimeOutAddOn):
             opts = {}
         """
 
-        for doc_group in grouper(docs, BULK_LIMIT):
+        for doc_group in grouper(self.get_documents(), BULK_LIMIT):
             doc_group = [
                 {
                     "force_ocur": ocr, 
