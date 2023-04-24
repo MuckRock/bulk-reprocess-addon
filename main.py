@@ -26,7 +26,7 @@ class Reprocess(SoftTimeOutAddOn):
         for doc_group in grouper(self.get_documents(), BULK_LIMIT):
             doc_group = [
                 {   
-                    "id": d.id
+                    "id": d.id, 
                     "force_ocur": ocr, 
                     "language": lang
                 }
