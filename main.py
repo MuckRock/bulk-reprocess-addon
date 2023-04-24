@@ -14,11 +14,12 @@ class Reprocess(SoftTimeOutAddOn):
         if ocr is None:
             ocr = False
         lang = self.data["language"]
-        document_language = self.data.get("document_language")
+
         if ocr:
             opts = {"force_ocr" : ocr, "language": lang}
         else: 
             opts = {}
+
         if self.data.get("sure"):
             for document in self.get_documents():
                 self.client.post(f"documents/{document.id}/process/", json=opts)
