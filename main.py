@@ -5,6 +5,7 @@ This DocumentCloud Add-On allows you to bulk reprocress documents on DocumentClo
 import requests
 from documentcloud.addon import SoftTimeOutAddOn
 from documentcloud.constants import BULK_LIMIT
+from documentcloud.toolbox import grouper, requests_retry_session
 
 class Reprocess(SoftTimeOutAddOn):
     """Force reprocress documents given ocr, ocr engine, and language"""
