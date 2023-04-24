@@ -12,3 +12,10 @@ properties:
   sure:
     title: Are you sure you want to reprocess these documents?
     type: boolean
+  force_ocr: 
+    title: Force OCR?
+    type: boolean
+  ocr_engine:
+    title: OCR Engine to apply (tesseract or textract)
+    type: string 
+    default: tesseract
