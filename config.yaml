@@ -15,3 +15,35 @@ properties:
   force_ocr: 
     title: Force OCR?
     type: boolean
+  ocr_engine:
+    title: OCR Engine (tess4 or textract)
+    type: string
+    default: tess4
+  language:
+    title: OCR Language. 
+    type: string
+    description: View full list of languages here: https://www.documentcloud.org/help/api#languages
+    default: eng
+    enum: &langs
+      - ara # Arabic
+      - zho # Chinese (Simplified)
+      - tra # Chinese (Traditional)
+      - hrv # Croatian
+      - dan # Danish
+      - nld # Dutch
+      - eng # English
+      - fra # French
+      - deu # German
+      - heb # Hebrew
+      - hun # Hungarian
+      - ind # Indonesian
+      - ita # Italian
+      - jpn # Japanese
+      - kor # Korean
+      - nor # Norwegian
+      - por # Portuguese
+      - ron # Romanian
+      - rus # Russian
+      - spa # Spanish
+      - swe # Swedish
+      - ukr # Ukrainian
