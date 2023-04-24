@@ -31,7 +31,7 @@ class Reprocess(SoftTimeOutAddOn):
                 }
                 for d in doc_group
             ]
-            resp = self.client.post("documents/process", json=doc_group)
+            resp = self.client.post("documents/process/", json=doc_group)
         """
         if self.data.get("sure"):
             for document in self.get_documents():
