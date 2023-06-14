@@ -42,3 +42,5 @@ properties:
       - spa # Spanish
       - swe # Swedish
       - ukr # Ukrainian
+categories:
+  - bulk
