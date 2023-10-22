@@ -11,9 +11,6 @@ class Reprocess(SoftTimeOutAddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
-        if not self.documents:
-            self.set_message("Please select at least one document.")
-            return
         ocr = self.data.get("force_ocr", False)
         lang = self.data["language"]
         if self.data.get("sure"):
