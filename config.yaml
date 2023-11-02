@@ -4,6 +4,7 @@ description: >-
   If they still fail to upload, use the Clear Failed Uploads Add-On to clear the failed documents
   and try re-uploading. If it is a large document set, use the [batch upload script](https://www.muckrock.com/news/archives/2023/jan/27/introducing-documentclouds-bulk-upload-script/).
   A [full list](https://www.documentcloud.org/help/api#languages) of languages supported by DocumentCloud is available for reference.
+instructions: ''
 type: object
 documents:
   - query
