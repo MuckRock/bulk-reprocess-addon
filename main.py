@@ -14,6 +14,7 @@ class Reprocess(SoftTimeOutAddOn):
         """The main add-on functionality goes here."""
         ocr = self.data.get("force_ocr", False)
         lang = self.data["language"]
+        print(BULK_LIMIT)
         if self.data.get("sure"):
             for document in self.get_documents():
                 doc_group = [
