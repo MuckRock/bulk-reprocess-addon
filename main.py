@@ -6,6 +6,7 @@ from documentcloud.addon import SoftTimeOutAddOn
 from documentcloud.constants import BULK_LIMIT
 from documentcloud.toolbox import grouper
 
+
 class Reprocess(SoftTimeOutAddOn):
     """Force reprocress documents given ocr, ocr engine, and language"""
 
@@ -20,7 +21,11 @@ class Reprocess(SoftTimeOutAddOn):
                 ]
                 self.client.post("documents/process/", json=doc_group)
 
-        else: 
-            self.set_message("You did not select sure, this Add-On did not do anything.") 
+        else:
+            self.set_message(
+                "You did not select sure, this Add-On did not do anything."
+            )
+
+
 if __name__ == "__main__":
     Reprocess().main()
