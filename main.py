@@ -16,10 +16,10 @@ class Reprocess(SoftTimeOutAddOn):
         lang = self.data["language"]
         if self.data.get("sure"):
             for doc_group in grouper(self.get_documents(), BULK_LIMIT):
-                print(doc_group)
-                """doc_group = [
-                    {"id": d.id, "force_ocr": ocr, "language": lang} for d in doc_group
-                ]"""
+                doc_group = [
+                    {"id": d.id, "force_ocr": ocr, "language": lang} 
+                    for d in doc_group if d is not None
+                ]
                 self.client.post("documents/process/", json=doc_group)
 
         else:
