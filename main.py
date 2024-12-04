@@ -16,7 +16,7 @@ class Reprocess(SoftTimeOutAddOn):
         if self.data.get("sure"):
             for doc_group in grouper(self.get_documents(), BULK_LIMIT):
                 doc_group = [
-                    {"id": d.id, "force_ocur": ocr, "language": lang} for d in doc_group
+                    {"id": d.id, "force_ocr": ocr, "language": lang} for d in doc_group
                 ]
                 self.client.post("documents/process/", json=doc_group)
 
