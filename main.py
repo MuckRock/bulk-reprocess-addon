@@ -2,6 +2,7 @@
 This DocumentCloud Add-On allows you to bulk reprocress documents on DocumentCloud
 """
 
+import time
 from documentcloud.addon import SoftTimeOutAddOn
 from documentcloud.constants import BULK_LIMIT
 from documentcloud.toolbox import grouper
@@ -17,11 +18,12 @@ class Reprocess(SoftTimeOutAddOn):
         if self.data.get("sure"):
             for doc_group in grouper(self.get_documents(), BULK_LIMIT):
                 doc_group = [
-                    {"id": d.id, "force_ocr": ocr, "language": lang} 
-                    for d in doc_group if d is not None
+                    {"id": d.id, "force_ocr": ocr, "language": lang}
+                    for d in doc_group
+                    if d is not None
                 ]
                 self.client.post("documents/process/", json=doc_group)
-
+                time.sleep(10)
         else:
             self.set_message(
                 "You did not select sure, this Add-On did not do anything."
