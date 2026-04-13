@@ -13,6 +13,7 @@ class Reprocess(SoftTimeOutAddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
+        self.client.session.headers.update({'User-Agent': 'Bulk Reprocess Add-On'})
         ocr = self.data.get("force_ocr", False)
         lang = self.data["language"]
         if self.data.get("sure"):
