@@ -24,7 +24,7 @@ class Reprocess(SoftTimeOutAddOn):
                     if d is not None
                 ]
                 self.client.post("documents/process/", json=doc_group)
-                time.sleep(1)
+                time.sleep(5)
         else:
             self.set_message(
                 "You did not select sure, this Add-On did not do anything."
